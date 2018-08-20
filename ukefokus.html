@@ -1,0 +1,25 @@
+<DOCTYPE html>
+  <meta charset="utf-8">
+  <html>
+    <head>
+      <link rel="stylesheet" href="ukefokus.css">
+    </head>
+    <body>
+      <script src="ukefokus.js"></script>
+
+      <div id="div1" class="centered">
+        <input id="focus_input" style="font-size: 50px;width: 50%; margin: 10px; margin-top: 16%">
+        <div class="centered">
+          <button class="button" onclick="setFocus()">Sett som fokus</button>
+        </div>
+      </div>
+      <div id="div2" style="display: none;">
+        <h1 class="overskrift">Ukens fokus:</h1>
+        <h1 class="fokus" id="focus">Fokus mangler! Det må ha skjedd en feil.</h1>
+        <div class="centered">
+          <button class="button" onclick="back()">Nytt fokus</button>
+          <p class="instruksjon">En tastatursnarvei for fokusbytte er 'n'</p>
+        </div>
+      </div>
+    </body>
+  </html>
