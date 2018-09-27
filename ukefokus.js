@@ -41,4 +41,5 @@ function back() {
     let input = document.getElementById("focus_input");
     input.value = "";
     switch_divs();
+    input.focus();
 }
