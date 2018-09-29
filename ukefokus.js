@@ -2,7 +2,7 @@
 
 let show = 2;
 
-document.onkeydown = function(e) {
+document.onkeyup = function(e) {
     if (e.which == 13) {
         if (show === 2) {
             setFocus();
@@ -39,7 +39,7 @@ function setFocus() {
 
 function back() {
     let input = document.getElementById("focus_input");
-    input.value = "";
     switch_divs();
+    input.value = "";
     input.focus();
 }
