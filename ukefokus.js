@@ -1,6 +1,21 @@
 "use strict";
 
 let show = 2;
+let storage = null;
+
+// Check for stored focus
+window.onload = function() {
+    if (typeof(Storage) !== "undefined") {
+        storage = window.localStorage;
+
+        if (storage.focus) {
+            let focus_element = document.getElementById("focus");
+            focus_element.innerHTML = storage.focus;
+            switch_divs();
+        }
+    }
+};
+
 
 document.onkeyup = function(e) {
     if (e.which == 13) {
@@ -13,7 +28,7 @@ document.onkeyup = function(e) {
         }
     }
 
-}
+};
 
 function switch_divs() {
     let div1 = document.getElementById("div1");
@@ -22,7 +37,7 @@ function switch_divs() {
     if (show === 1) {
         div1.style.display = "block";
         div2.style.display = "none";
-        show = 2
+        show = 2;
     } else if (show === 2) {
         div1.style.display = "none";
         div2.style.display = "block";
@@ -31,9 +46,9 @@ function switch_divs() {
 }
 
 function setFocus() {
-    let new_focus = document.getElementById("focus_input").value;
+    storage.focus = document.getElementById("focus_input").value;
     let focus_element = document.getElementById("focus");
-    focus_element.innerHTML = new_focus;
+    focus_element.innerHTML = storage.focus;
     switch_divs();
 }
 
